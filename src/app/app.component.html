@@ -1,4 +1,38 @@
-<div *ngFor="let movie of movies">
-  <img [src]="'https://www.themoviedb.org/t/p/w220_and_h330_face'+movie.poster_path" alt="">
-  <div>{{movie.original_title}}</div>
+<div class="container">
+  <h1 class="title">Top rated movies</h1>
+  <div class="row movies"  [ngStyle]="{'max-width':innerWidth}" >
+    <mat-card-title-group  class="movie"  *ngFor="let movie of topRatedMovies" [style.background-image]="toPosterUrl(movie.poster_path)">
+      <img mat-card-image width="175" loading=lazy [src]="toPosterUrl(movie.poster_path)" alt="" style="border-radius: 10px;">
+      <div class="rating">
+        {{movie.vote_average}}
+      </div>
+      <br/>
+      <mat-card-header>
+     
+        <mat-card-title >{{movie.title}}</mat-card-title>
+        <h3>{{movie.release_date}}</h3>
+      </mat-card-header>
+
+    </mat-card-title-group>
+    
+  </div>
+</div>
+<div class="container">
+  <h1 class="title">Upcoming movies</h1>
+  <div class="row movies"  [ngStyle]="{'max-width':innerWidth}" >
+    <mat-card-title-group  class="movie"  *ngFor="let movie of upComingMovies" [style.background-image]="toPosterUrl(movie.poster_path)">
+      <img mat-card-image width="175" loading=lazy [src]="toPosterUrl(movie.poster_path)" alt="" style="border-radius: 10px;">
+      <div class="rating">
+        {{movie.vote_average}}
+      </div>
+      <br/>
+      <mat-card-header>
+     
+        <mat-card-title >{{movie.title}}</mat-card-title>
+        <h3>{{movie.release_date}}</h3>
+      </mat-card-header>
+
+    </mat-card-title-group>
+    
+  </div>
 </div>

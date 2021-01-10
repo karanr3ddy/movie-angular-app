@@ -1,0 +1,26 @@
+.row.movies {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  overflow: scroll;
+}
+.row.movies .movie {
+  margin-left: 10px;
+}
+.rating {
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  padding: 8px;
+  background-color:purple;
+  margin-top: -55px;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  position: relative;
+}
+.title {
+  margin-left: 10px;
+  margin-top: 10px;
+}

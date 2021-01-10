@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class MoviesBackendService {
   private readonly ApiKey="5c7097b09a678d4a31862359aabf467b";
-  readonly URL = "https://api.themoviedb.org/3/movie";
+  readonly URL = "https://api.themoviedb.org/3";
   constructor(private _http: HttpClient) { }
   async getTopRated(){
     const options= {
@@ -14,6 +14,15 @@ export class MoviesBackendService {
             api_key:this.ApiKey
           }
         }
-   return await this._http.get(`${this.URL}/top_rated`,options).toPromise();
+   return await this._http.get(`${this.URL}/movie/top_rated`,options).toPromise();
+  }
+
+  async getUpcoming(){
+    const options= {
+        params: {
+            api_key:this.ApiKey
+          }
+        }
+   return await this._http.get(`${this.URL}/movie/upcoming`,options).toPromise();
   }
 }
