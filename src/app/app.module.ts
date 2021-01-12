@@ -6,9 +6,16 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { HomeComponent } from './home/home.component';
+import { MovieGalleryComponent } from './movie-gallery/movie-gallery.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MovieDetailsComponent,
+    HomeComponent,
+    MovieGalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -16,6 +23,7 @@ import { MaterialModule } from './modules/material/material.module';
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
+    NgxSkeletonLoaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
